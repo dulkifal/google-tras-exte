@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Google Translate Customizer",
+    "version": "1.0",
+    "description": "Customizes Google Translate: hides header, sets Arabic font, moves copy icon.",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://translate.google.com/*"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "Sakkal Majalla Regular.ttf"
+            ],
+            "matches": [
+                "https://translate.google.com/*"
+            ]
+        }
+    ]
+}

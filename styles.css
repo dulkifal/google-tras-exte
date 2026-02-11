@@ -1,0 +1,32 @@
+/* Hide the header - targeting multiple possible classes for robustness */
+header, .gb_Ed, .gb_Jd, .gb_Kd, header.gb_Ia, .gb_Hc, .gb_Ha, .gb_Vf, .gb_Uf, .VjFXz, .U0xwnf, .hgbeOc, .EjH7wc {
+    display: none !important;
+}
+
+/* Set Arabic font via local file */
+@font-face {
+    font-family: 'Sakkal Majalla Custom';
+    src: url('chrome-extension://__MSG_@@extension_id__/Sakkal Majalla Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Target the output text area for Arabic */
+/* This might need adjustment based on Google's dynamic classes, but looking for common containers */
+span[lang="ar"], 
+.J0lOec[lang="ar"],
+.Ryqhu[lang="ar"] { 
+    /* First try local custom font, then system font */
+    font-family: 'Sakkal Majalla Custom', 'Sakkal Majalla', 'Sakkal Majella', sans-serif !important;
+    font-size: 1.2em !important; /* Make it a bit larger as Sakkal Majalla can be small */
+}
+
+/* Move copy icon - we'll initially hide it from the bottom via CSS if we can identify it securely, 
+   but JS moving is safer to avoid duplicates. 
+   However, let's style the new location if needed. */
+.custom-copy-btn-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
